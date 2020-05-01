@@ -22,7 +22,7 @@ class CreateToolsService {
       title,
       link,
       description,
-      tags,
+      tags: tags.split(',').map(tag => tag.trim()),
     });
 
     await toolsRepository.save(tools);

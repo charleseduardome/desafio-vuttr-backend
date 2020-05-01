@@ -20,8 +20,8 @@ class Tools {
   @Column()
   description: string;
 
-  @Column()
-  tags: string;
+  @Column('simple-array')
+  tags: string[];
 
   @CreateDateColumn()
   created_at: Date;

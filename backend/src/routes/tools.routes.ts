@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getRepository } from 'typeorm';
+import { getRepository, TreeParent, Table } from 'typeorm';
 
 import CreateToolsService from '../services/CreateToolsService';
 import Tools from '../models/Tools';
@@ -7,7 +7,13 @@ import Tools from '../models/Tools';
 const toolsRouter = Router();
 
 toolsRouter.get('/', async (request, response) => {
-  return response.json({ ok: true });
+  const toolsRepository = getRepository(Tools);
+
+  const tools = await toolsRepository.find({
+    select: ['id', 'title', 'link', 'description', 'tags'],
+  });
+
+  return response.json(tools);
 });
 
 toolsRouter.post('/', async (request, response) => {
