@@ -1,13 +1,14 @@
 ## Getting started
 
-Clone this repository.<br/>
-Create your database (postgres).<br/>
-Renamed the file `.env.example` for `.env`.<br/>
-Configure the `.env` file with the access data base.<br/>
-Open the folder and run the `yarn` command to install all dependencies.<br/>
-Run migrations: `yarn typeorm migration: run`<br/>
-Check if tables were created.<br/>
-Run: `yarn dev: server` to start the server in development mode.
+### Clone this repository.<br/>
+
+- Create your database (postgres).<br/>
+- Renamed the file `.env.example` for `.env`.<br/>
+- Configure the `.env` file with the access data base.<br/>
+- Open the folder and run the `yarn` command to install all dependencies.<br/>
+- Run migrations: `yarn typeorm migration: run`<br/>
+- Check if tables were created.<br/>
+- Run: `yarn dev: server` to start the server in development mode.
 
 ## Routes
 
