@@ -1,7 +1,6 @@
 ## Getting started
 
-### Clone this repository.<br/>
-
+- Clone this repository.<br/>
 - Create your database (postgres).<br/>
 - Renamed the file `.env.example` for `.env`.<br/>
 - Configure the `.env` file with the access data base.<br/>
