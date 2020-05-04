@@ -1971,6 +1971,11 @@ pg-connection-string@0.1.3:
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-0.1.3.tgz#da1847b20940e42ee1492beaf65d49d91b245df7"
   integrity sha1-2hhHsglA5C7hSSvq9l1J2RskXfc=
 
+pg-connection-string@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.2.1.tgz#fd22870c4cdff66f085a8759ee68cde8e9ca0cbf"
+  integrity sha512-WnIjIJR575VyX+jRqpSt5PqbIzr3+1D793CkBbQWvpiNTGuHffZEO9+VrwAw0XSVfvxea7QiplHINGahWe9rjg==
+
 pg-int8@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
