@@ -1,6 +1,11 @@
 ## Getting started
 
 - Clone this repository.<br/>
+
+```sh
+git clone https://github.com/charleseduardome/desafio-vuttr-backend.git
+```
+
 - Create your database (postgres).<br/>
 - Renamed the file `.env.example` for `.env`.<br/>
 - Configure the `.env` file with the access data base.<br/>
@@ -29,3 +34,9 @@
 - `GET / tools?tag=your_search`: Filter tools using a tag search query parameters;
 
 - `DELETE / tools /: id`: Route that delete the tool with `id` present in the route parameters;
+
+## Docs
+
+After starting the application, you can access the documentation containing all available resources on the API by accessing: http://localhost:3000/docs
+
+You can also read the OpenAPI schema located in src/swagger.json.
