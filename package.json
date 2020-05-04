@@ -1,12 +1,23 @@
 {
   "name": "vuttr-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "repository": "github.com:charleseduardome/desafio-vuttr-backend.git",
+  "author": "charleseduardome <charleseduardo.me@gmail.com>",
+  "main": "dist/server.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build-ts": "tsc",
+    "postinstall": "npm run build-ts",
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
     "dev:server": "ts-node-dev --inspect --transpileOnly  --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "engines": {
+    "node": "12.16.1"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
