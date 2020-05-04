@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateTools1588266617919 implements MigrationInterface {
+export default class CreateUsers1588600853529 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'tools',
+        name: 'users',
         columns: [
           {
             name: 'id',
@@ -14,19 +14,16 @@ export default class CreateTools1588266617919 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'title',
+            name: 'name',
             type: 'varchar',
           },
           {
-            name: 'link',
+            name: 'email',
             type: 'varchar',
+            isUnique: true,
           },
           {
-            name: 'description',
-            type: 'varchar',
-          },
-          {
-            name: 'tags',
+            name: 'password',
             type: 'varchar',
           },
           {
@@ -45,6 +42,6 @@ export default class CreateTools1588266617919 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('tools');
+    await queryRunner.dropTable('users');
   }
 }

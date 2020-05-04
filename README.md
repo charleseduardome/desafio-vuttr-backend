@@ -7,6 +7,7 @@ git clone https://github.com/charleseduardome/desafio-vuttr-backend.git
 ```
 
 - Create your database (postgres).<br/>
+  `You can install and execute the backend of this project by using Docker or manually.`
 - Renamed the file `.env.example` for `.env`.<br/>
 - Configure the `.env` file with the access data base.<br/>
 - Open the folder and run the `yarn` command to install all dependencies.<br/>

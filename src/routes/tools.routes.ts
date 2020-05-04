@@ -3,9 +3,14 @@ import { getRepository, Like } from 'typeorm';
 
 import CreateToolsService from '../services/CreateToolsService';
 import DeleteToolsService from '../services/DeleteToolsService';
+
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 import Tools from '../models/Tools';
 
 const toolsRouter = Router();
+
+toolsRouter.use(ensureAuthenticated);
 
 toolsRouter.get('/', async (request, response) => {
   const { tag } = request.query;

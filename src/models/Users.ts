@@ -6,22 +6,19 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('tools')
-class Tools {
+@Entity('users')
+class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  title: string;
+  name: string;
 
   @Column()
-  link: string;
+  email: string;
 
   @Column()
-  description: string;
-
-  @Column('simple-array')
-  tags: string[];
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -30,4 +27,4 @@ class Tools {
   updated_at: Date;
 }
 
-export default Tools;
+export default User;
