@@ -37,6 +37,6 @@ git clone https://github.com/charleseduardome/desafio-vuttr-backend.git
 
 ## Docs
 
-After starting the application, you can access the documentation containing all available resources on the API by accessing: http://localhost:3000/api-docs/
+After starting the application, you can access the documentation containing all available resources on the API by accessing: http://localhost:3000/docs
 
 You can also read the OpenAPI schema located in src/swagger.json.
