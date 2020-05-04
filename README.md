@@ -15,7 +15,15 @@ git clone https://github.com/charleseduardome/desafio-vuttr-backend.git
 - Check if tables were created.<br/>
 - Run: `yarn dev: server` to start the server in development mode.
 
-## Routes
+## Routes Users
+
+- `POST / users`: Route gets `id`, `name` and `email`, inside body to register a new user.
+
+## Routes Sessions
+
+- `POST / sessions`: `user` and `token`, use the token for authorizations in http://localhost:3000/api-docs/
+
+## Routes Tools
 
 - `POST / tools`: Route gets `id`, `title`, `link`, `description` and `tags` inside body to register a new tool in an array in the following format:
 
