@@ -1,4 +1,6 @@
 import { createConnection } from 'typeorm';
+import Users from '../models/Users';
+import Tools from '../models/Tools';
 
 if (process.env.NODE_ENV === 'development') {
   createConnection();
@@ -8,18 +10,13 @@ if (process.env.NODE_ENV === 'production') {
   createConnection({
     url: process.env.DATABASE_URL,
     type: 'postgres',
-    entities: ['dist/models/*.js'],
-    migrations: ['dist/database/migrations/*.js'],
-    cli: {
-      entitiesDir: 'dist/entities',
-      migrationsDir: 'dist/database/migrations',
-      subscribersDir: 'dist/database/subscribers',
-    },
-    migrationsRun: true,
+    entities: [Users, Tools],
     synchronize: true,
-    logging: true,
+    ssl: true,
     extra: {
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
   });
 }
