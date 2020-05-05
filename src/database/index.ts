@@ -1,8 +1,17 @@
 import { createConnection } from 'typeorm';
 
 createConnection({
-  url: process.env.DATABASE_URL,
   type: 'postgres',
-  synchronize: true,
+  url: process.env.DATABASE_URL,
+  schema: 'public',
+  synchronize: false,
+  logging: false,
+  entities: ['src/models/*.ts'],
+  migrations: ['src/migrations/*.ts'],
+  cli: {
+    entitiesDir: 'src/models',
+    migrationsDir: 'src/migrations',
+  },
   ssl: true,
+  migrationsRun: true,
 });
