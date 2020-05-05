@@ -1,17 +1,16 @@
-import { createConnection } from 'typeorm';
+import { createConnection, Connection } from 'typeorm';
 
-createConnection({
-  type: 'postgres',
-  url: process.env.DATABASE_URL,
-  schema: 'public',
-  synchronize: false,
-  logging: false,
-  entities: ['src/models/*.ts'],
-  migrations: ['src/migrations/*.ts'],
-  cli: {
-    entitiesDir: 'src/models',
-    migrationsDir: 'src/migrations',
-  },
-  ssl: true,
-  migrationsRun: true,
-});
+export default async function buildConnectionPromise(): Promise<Connection> {
+  const connection = await createConnection({
+    type: 'postgres',
+    entities: ['./src/models/*.ts'],
+    migrations: ['./src/migrations/*.ts'],
+    migrationsRun: false,
+    synchronize: false,
+    url: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  await connection.runMigrations();
+  await connection.synchronize();
+  return connection;
+}
