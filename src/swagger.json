@@ -135,7 +135,7 @@
         }
       },
       "post": {
-        "summary": "Create new tool",
+        "summary": "Create new tool, separate as tags by comma",
         "security": [
           {
             "bearerAuth": []

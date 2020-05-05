@@ -1,3 +1,5 @@
+<a href="https://appvuttr.herokuapp.com/api-docs" class="button big">Live Demo</a>
+
 ## Getting started
 
 - Clone this repository.<br/>
