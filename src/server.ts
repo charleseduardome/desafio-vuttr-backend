@@ -8,11 +8,9 @@ import swaggerDocument from './swagger.json';
 import AppError from './errors/AppError';
 import routes from './routes';
 
-import buildConnectionPromise from './database';
+import './database';
 
 const app = express();
-buildConnectionPromise();
-
 app.use(cors());
 
 app.use(express.json());
