@@ -6,7 +6,7 @@
   "main": "dist/server.js",
   "license": "MIT",
   "scripts": {
-    "build-ts": "tsc",
+    "build-ts": "tsc --typeorm migration:run",
     "postinstall": "npm run build-ts",
     "start": "npm run serve",
     "serve": "node dist/server.js",
