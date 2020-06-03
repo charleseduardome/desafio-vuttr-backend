@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getRepository, Like } from 'typeorm';
+import { getRepository, Like, Raw } from 'typeorm';
 
 import CreateToolsService from '../services/CreateToolsService';
 import DeleteToolsService from '../services/DeleteToolsService';
@@ -13,9 +13,22 @@ const toolsRouter = Router();
 toolsRouter.use(ensureAuthenticated);
 
 toolsRouter.get('/', async (request, response) => {
-  const { tag } = request.query;
+  const { search, tag } = request.query;
 
   const toolsRepository = getRepository(Tools);
+
+  if (search) {
+    const tools = await toolsRepository.find({
+      select: ['id', 'title', 'link', 'description', 'tags'],
+      where: [
+        { title: Like(`%${search}%`) },
+        { description: Like(`%${search}%`) },
+        { tags: Like(`%${search}%`) },
+      ],
+    });
+
+    return response.json(tools);
+  }
 
   if (tag) {
     const tools = await toolsRepository.find({
@@ -27,6 +40,7 @@ toolsRouter.get('/', async (request, response) => {
 
     return response.json(tools);
   }
+
   const tools = await toolsRepository.find({
     select: ['id', 'title', 'link', 'description', 'tags'],
   });
