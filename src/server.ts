@@ -40,6 +40,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('(^o^) Server started on port 3000');
+app.listen(process.env.PORT || 3333, () => {
+  console.log('(^o^) Server started on port 3333');
 });
